@@ -12,6 +12,9 @@ public class Main {
 
     private static final Something something = new Something();
 
+    /**
+     * 同步运行两个任务
+     */
     public static void synchronously() {
         System.out.println("同步运行：");
         something.doSomethingA();
@@ -48,16 +51,19 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception {
+
         long start = System.currentTimeMillis();
         synchronously();
         long end = System.currentTimeMillis();
         System.out.println("Run time: " + (end-start));
         System.out.println("-----------------");
+
         start = System.currentTimeMillis();
         coreOne();
         end = System.currentTimeMillis();
         System.out.println("Run time: " + (end-start));
         System.out.println("-----------------");
+
         start = System.currentTimeMillis();
         coreTwo();
         end = System.currentTimeMillis();
