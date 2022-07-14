@@ -7,7 +7,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
- * 场景4：使用Future、线程池实现异步编程，异步任务有返回信息
+ * 场景5：使用Future、线程池实现异步编程，异步任务有返回信息
  *
  * @author cyan
  * @since 2022/7/14
