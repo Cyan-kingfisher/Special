@@ -36,7 +36,7 @@ public class Main {
                     latch.countDown();
                 }
         );
-        // latch为0向下执行，＞0时线程阻塞
+        // 作用为等待线程池内异步任务完成，实现逻辑为：latch为0向下执行，＞0时线程阻塞
         latch.await();
         System.out.println(System.currentTimeMillis() - start);
         Thread.currentThread().join();
