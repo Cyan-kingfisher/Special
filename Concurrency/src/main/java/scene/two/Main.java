@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 场景2：显示使用线程池实现异步编程
+ * 场景2：显示使用线程池实现异步编程，异步任务无返回信息
  *
  * @author cyan
  * @since 2022/7/14

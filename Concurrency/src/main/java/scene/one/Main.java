@@ -3,7 +3,7 @@ package scene.one;
 import common.Something;
 
 /**
- * 场景一：2种方法显式开启一个线程异步处理，关键类Thread
+ * 场景一：2种方法显式开启一个线程异步处理，关键类Thread，异步任务无返回信息
  *
  * @author cyan
  * @since 2022/7/13
