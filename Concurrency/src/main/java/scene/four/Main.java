@@ -1,12 +1,13 @@
-package scene.three;
+package scene.four;
 
 import common.Something;
+import common.ThreadPoolFactory;
 
-import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
- * 场景3：显示使用FutureTask、Thread实现异步编程，异步任务有返回信息
+ * 场景4：使用FutureTask、线程池实现异步编程，异步任务有返回信息
  *
  * @author cyan
  * @since 2022/7/14
@@ -16,13 +17,13 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         Something something = new Something();
+        ThreadPoolExecutor threadPoolExecutor = ThreadPoolFactory.create();
 
         long start = System.currentTimeMillis();
 
         FutureTask<String> taskC = new FutureTask<>(something::doSomethingC);
 
-        Thread thread = new Thread(taskC, "threadTaskC");
-        thread.start();
+        threadPoolExecutor.execute(taskC);
 
         String resultTaskD = something.doSomethingD();
         String resultTaskC = taskC.get();
