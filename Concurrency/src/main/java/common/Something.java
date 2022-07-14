@@ -24,4 +24,24 @@ public class Something {
         System.out.println("--- doSomethingB ---");
     }
 
+    public String doSomethingC() {
+        try {
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("--- doSomethingC ---");
+        return "Task C Finish";
+    }
+
+    public String doSomethingD() {
+        try {
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("--- doSomethingD ---");
+        return "Task D Finish";
+    }
+
 }
