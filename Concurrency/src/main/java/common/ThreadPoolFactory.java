@@ -11,9 +11,12 @@ import java.util.concurrent.TimeUnit;
 public class ThreadPoolFactory {
 
     public static ThreadPoolExecutor create() {
+
+        final int AVALIABLE_PROCESSORS = Runtime.getRuntime().availableProcessors();
+
         return new ThreadPoolExecutor(
-                2, 4, 1,
-                TimeUnit.MINUTES, new LinkedBlockingQueue<>(6)
+                AVALIABLE_PROCESSORS, AVALIABLE_PROCESSORS * 2, 1,
+                TimeUnit.MINUTES, new LinkedBlockingQueue<>(AVALIABLE_PROCESSORS * 2)
                 , new ThreadPoolExecutor.CallerRunsPolicy());
     }
 
