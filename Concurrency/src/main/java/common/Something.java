@@ -55,6 +55,7 @@ public class Something {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
+                    System.out.println("method: doSomethingOne, args: " + studentId);
                     return "subjectId:" + studentId;
                 }
         );
@@ -70,6 +71,7 @@ public class Something {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
+                    System.out.println("method: doSomethingTwo, args: " + subjectId);
                     return "score:" + subjectId;
                 }
         );
