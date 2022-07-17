@@ -31,8 +31,8 @@ public class Main {
                     something.doSomethingD();
                 }
         );
-        long end = System.currentTimeMillis();
         completableFutureTaskD.get();
+        long end = System.currentTimeMillis();
         System.out.println("Run time：" + (end - start));
     }
 
