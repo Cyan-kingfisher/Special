@@ -1,5 +1,7 @@
 package common;
 
+import java.util.concurrent.CompletableFuture;
+
 /**
  * @author cyan
  * @since 2022/7/13
@@ -42,6 +44,36 @@ public class Something {
         }
         System.out.println("--- doSomethingD ---");
         return "Task D Finish";
+    }
+
+    public CompletableFuture<String> doSomethingOne(String studentId) {
+
+        return CompletableFuture.supplyAsync(
+                () -> {
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    return "subjectId:" + studentId;
+                }
+        );
+
+    }
+
+    public CompletableFuture<String> doSomethingtwo(String subjectId) {
+
+        return CompletableFuture.supplyAsync(
+                () -> {
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    return "score:" + subjectId;
+                }
+        );
+
     }
 
 }
