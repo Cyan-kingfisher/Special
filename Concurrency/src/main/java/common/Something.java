@@ -78,4 +78,14 @@ public class Something {
 
     }
 
+    public String rpcCall(String ip) {
+        System.out.println("IP: " + ip + ", thread name: " + Thread.currentThread().getName());
+        try {
+            Thread.sleep(1000);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return ip + "transfer";
+    }
+
 }
